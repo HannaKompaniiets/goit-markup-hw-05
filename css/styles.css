@@ -69,14 +69,15 @@ img {
     padding-top: 24px;
     padding-bottom: 24px;
    
-    transition-property: background-color;
+    transition-property: color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    
   }
 
 
-.menu.active::after {
+.menu.active::after,
+.menu:hover::after,
+.menu.focus::after {
     content: '';
     position: absolute;
     display: block;
@@ -90,8 +91,8 @@ img {
     opacity: 1;
 }
 .menu:hover,
-.menu:focus {
-    color: rgba(77, 90, 229, 1);
+.menu:focus{
+    color: #4D5AE5;
 }
 
 
@@ -108,13 +109,14 @@ img {
 .navigation-row .item + .item{
     margin-left: 40px;
 }
+
 .contacts {
     font-size: 16px;
     line-height: 1.5;
     color: var(--primary-text-color);
     padding-top: 24px;
     padding-bottom: 24px;
-    transition-property: background-color;
+    transition-property: color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -123,6 +125,7 @@ img {
 .contacts:focus {
     color: #4D5AE5;
 }
+
 .contacts-row {
     display:flex;
     margin-left: auto;
@@ -131,19 +134,21 @@ img {
 .contacts-row .item +.item {
     margin-left: 40px;
 }
+
 .top-menu {
     display: flex;
     align-items: center;
     justify-content: flex-start;
 
 }
+
 .top-menu-nav {
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
 
-.hero{
+.hero {
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -177,22 +182,18 @@ img {
     background: #4D5AE5;
     font-family: inherit;
     cursor: pointer;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     padding: 16px 32px;
     border: none ;
-
-    transition-property: background-color, box-shadow;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);    
+    transition-property: box-shadow;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
-
-
 .button:hover, 
 .button:focus {
-    background-color: #4D5AE5;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     color: #FFFFFF;
 }
@@ -208,6 +209,7 @@ img {
     line-height: 1.19;
     color: #FFFFFF;
 }
+
 .section {
     padding-top: 120px;
     padding-bottom: 120px;    
@@ -227,6 +229,7 @@ img {
     padding: 0;
     margin: 0;
 }
+
 .about-description .item {
     display: block;
     margin-bottom: 8px;
@@ -247,7 +250,7 @@ img {
     border-radius: 4px;
     background-position: center;
     background-color: #F4F4FD;
-     }
+}
 
 .icon-description {
     display: block;
@@ -260,14 +263,14 @@ img {
     height: 112px;
     width: 264px;
 }
+
 .about-titles {
     font-weight: 600;
     font-size: 20px;
     line-height: 1.2;
     color: var(--primary-title-color);
     margin-bottom: 8px;
-    margin-top: 8px;
-    
+    margin-top: 8px; 
 }
 
 .about-text {
@@ -318,7 +321,6 @@ img {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
     border-radius: 0px 0px 4px 4px;
 }
-
 
 .card-description {
     padding: 32px 16px 36px 16px;
@@ -525,8 +527,9 @@ margin-right: 120px;
     letter-spacing: 0.04em;
     padding: 12px 24px;   
 
-    transition-property: background-color;
-    
+    transition-property: background-color, border, color, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-menu:hover, 
@@ -535,7 +538,6 @@ margin-right: 120px;
     border: 1px solid transparent;
     color: #FFFFFF;
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-    cursor: pointer;
 }
 
 .menu-position {
@@ -558,7 +560,7 @@ margin-right: 120px;
     color: inherit;
     overflow: hidden;
 
-    transition: transform;
+    transition: box-shadow;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     
@@ -567,8 +569,9 @@ margin-right: 120px;
 .card-reference:hover,
 .card-reference:focus {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-   transform: translate();
+  
 }
+
  .portfolio-set {
     display: flex;
     flex-wrap: wrap; 
@@ -633,53 +636,19 @@ margin-right: 120px;
     width: 100%;
     height: 100%;
     background: rgba(46, 47, 66, 0.4);
-    animation-name: changeScale;
-    animation-duration: 2000ms;
-    animation-timing-function: linear; 
+    transition: scale(.50);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
     
-    @keyframes changeScale {
-        0% {
-        transform: scale(0.25);
-        opacity: 0;
-        visibility: visible;
-        }
-    
-        50% {
-        transform: scale(0.5);
-        opacity: 0.5;
-        }
-    
-        100% {
-        transform: scale(1);
-        opacity: 1;
-        }
-    }
-
-    @keyframes scaleOut {
-        0% {
-            transform: scale(1);
-            opacity: 1;
-        }
-
-        50% {
-            transform: scale(0.5);
-            opacity: 0.5;
-        }
-
-        100% {
-            transform: scale(0);
-            opacity: 0;
-            visibility: hidden;
-        }
-    }
-
 .backdrop.is-hidden {
     opacity: 0;
     pointer-events: none;   
-    animation-name: scaleOut;
-    animation-duration: 2000ms;
-    animation-timing-function: linear;
+    transition: scale(.50);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .modal {
@@ -708,6 +677,7 @@ margin-right: 120px;
     background: #E7E9FC;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
+    cursor: pointer;
 }
    
 .button-close {
